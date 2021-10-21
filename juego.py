@@ -14,29 +14,37 @@ class Juego:
         
     #menu basico de opciones    
     def opciones(self):
-            print("Para empezar a jugar: Jugar\nSi tienes dudas sobre como se juega: Dudas\nSi quieres saber cuales son los colores: Colores\nSi quieres salir: Salir")
-            siguiente=input("Que quieres hacer? ")
-            while True:
-                #Comprobamos que el comando introducido es correcto 
-                if siguiente=="Salir":
-                    
-                    print("Hasta la proxima!")
-                    break
-                    
-                elif siguiente=="Jugar":
-                    self.jugador()
-                elif siguiente=="Dudas":
-                    print("Se trata de adivinar un codigo secreto oculto! Tienes que adivinar la combinacion de colores correcta. Los colores se pueden repetir, cuando aciertes uno de las posiciones la respuesta de la maquina sera una X, si aciertas un color pero no esta en posicion correcta sera un O, si el color no esta se imprime un /")
-                    self.opciones()
-                elif siguiente=="Colores":
-                    self.ejemplo_colores()
-                    self.opciones()
-                else:
-                    print("Comando introducido no es correcto, intentalo de nuevo")
-                    self.opciones()
+            print('''
+            ---------------------------------------------
+            Para empezar a jugar: Jugar
+            Si tienes dudas sobre como se juega: Dudas
+            Si quieres saber cuales son los colores: Colores
+            Si quieres salir: Salir
+            ----------------------------------------------''')
+            siguiente=input("Que quieres hacer? ").title()
             
+                #Comprobamos que el comando introducido es correcto 
+            if siguiente=="Salir":
+                print("Hasta la proxima!")
                 
-        
+            elif siguiente=="Jugar":
+                self.jugador()
+            elif siguiente=="Dudas":
+                #Lo pongo a la izquierda para que en la terminal se vea pegado al margen
+                print('''
+Se trata de adivinar un codigo secreto oculto!
+Tienes que adivinar la combinacion de colores correcta. 
+Los colores se pueden repetir, cuando aciertes uno de las posiciones la respuesta de la maquina sera una X,
+si aciertas un color pero no esta en posicion correcta sera un O, si el color no esta se imprime un /.
+                    ''')
+                self.opciones()
+            elif siguiente=="Colores":
+                self.ejemplo_colores()
+                self.opciones()
+            else:
+                print("Comando introducido no es correcto, intentalo de nuevo")
+                self.opciones()
+            
     #ejemplo de colores coloerados
     def ejemplo_colores(self):
         print(f"Los colores disponibles son: ")
@@ -58,8 +66,7 @@ class Juego:
         self.seleccion=random.choices(self.colores,k=4)
         return self.seleccion
 
-       
-    #creamos la funcion de pedir los colores e identificar si estan en el sitio correcto
+   #creamos la funcion de pedir los colores e identificar si estan en el sitio correcto
     def jugador(self):
         seleccion=self.seleccion_bolas()
         #codigo para comprobaciones, se imprimen los colores en orden, lo dejo desseleccionado para jugar
@@ -74,11 +81,11 @@ class Juego:
         
         #Comienza el juego con las oportunidades que has marcado
         while self.oportunidades>0:
-            #ahora vamos a comprobar que coincida el color      
-            primer_numero=input("Introduce el primer color: ")
-            segundo_numero=input("Introduce el segundo color: ")
-            tercer_numero=input("Introduce el tercer color: ")
-            cuarto_numero=input("Introduce el cuarto color: ")
+            #ahora vamos a comprobar que coincida el color, cambiamos la respuesta para que la primera letra sea mayuscula
+            primer_numero=input("Introduce el primer color: ").title()
+            segundo_numero=input("Introduce el segundo color: ").title()
+            tercer_numero=input("Introduce el tercer color: ").title()
+            cuarto_numero=input("Introduce el cuarto color: ").title()
             
             #creo una lista para imprimir el resultado
             self.resultado=[]       
@@ -120,22 +127,26 @@ class Juego:
             ''.join(random.sample(self.resultado,len(self.resultado)))
             
             self.oportunidades-=1
-            print(f'Te quedan {self.oportunidades} oportunidades todavia, recuerda que los colores son {self.colores}')
+            print(f'Te quedan {self.oportunidades} oportunidades todavia, recuerda que los colores son {", ".join(self.colores)}')
             
-            
+            #Condiciones de victoria o derrota
             if self.resultado=="XXXX":
                 print("HAS CONSEGUIDO GANAR!!")
-                self.opciones()
-                break
+                x=input("Quieres seguir jugando? Si/No")
+                if x=="Si":
+                    self.opciones()
+                else:
+                    print("Hasta la proxima")
+                    break
             elif self.oportunidades==0:
                 print(f"{self.resultado}\nHas sido derrotado!La respuesta correcta es: {seleccion}")
-            
-            #Una vez piedes que te devuelva al menu
-                self.opciones()
-        #Ahora se muestra el resultado
-            print("======")
-            print(f'|{self.resultado}|')
-            print("======")
+                x=input("Quieres seguir jugando? Si/No").title()
+                if x=="Si":
+                    self.opciones()
+                else:
+                    print("Hasta la proxima")
+                    break
+
 def main():
     while True:
         partida = Juego()
