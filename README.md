@@ -27,8 +27,8 @@ Descarga los archivos y ejecuta el archivo **juego.py**, sigue las instrucciones
 
 ## Organizacion- Trello
 Para realizar este proyecto, las tareas se han distribuido de la siguiente manera.
-![alt text](C:\Users\irazu\Curso Ironhack\proyectos\PR01-project-python ,"Trello")
+![alt text](C:\Users\irazu\Curso Ironhack\proyectos\PR01-project-python?raw=True ,"Trello")
 
 ## Mas informacion
- (https://www.aboutespanol.com/aprende-a-jugar-mastermind-paso-a-paso-2077618)
+ https://www.aboutespanol.com/aprende-a-jugar-mastermind-paso-a-paso-2077618
 
