@@ -1,9 +1,10 @@
-<img src="https://tcf.admeen.org/game/1500/1204/400x246/mastermind.jpg"  width="100"/>
+<img src="https://tcf.admeen.org/game/1500/1204/400x246/mastermind.jpg"  width="1000"/>
 
 # PR01-project-python
 # Mastermind
 
 Primer proyecto del modulo 1
+
 
 ## Contenido
 - [Descripcion del juego](#description-del-juego)
@@ -11,6 +12,7 @@ Primer proyecto del modulo 1
 - [Forma de jugar](#forma-de-jugar)
 - [Organizacion-Trello](#organizacion-trello)
 - [Mas informacion](#mas-info)
+
 
 ## Descripcion del juego
 **Mastermind** es un juego de lógica que puede ser jugado por dos personas. 
@@ -25,10 +27,11 @@ Cada turno elegirás cuatro combinaciones de colores con tres resultados posible
 ## Forma de jugar
 Descarga los archivos y ejecuta el archivo **juego.py**, sigue las instrucciones y asegurate de haber escrito bien la palabra.
 
+
 ## Organizacion- Trello
 Para realizar este proyecto, las tareas se han distribuido de la siguiente manera.
-![alt text](C:\Users\irazu\Curso Ironhack\proyectos\PR01-project-python?raw=True ,"Trello")
+[Trello](https://trello.com/b/VMtzURyH/pr01-juego-python)
+
 
 ## Mas informacion
- https://www.aboutespanol.com/aprende-a-jugar-mastermind-paso-a-paso-2077618
-
+ [Enlace de interes](https://www.aboutespanol.com/aprende-a-jugar-mastermind-paso-a-paso-2077618)
