@@ -1,4 +1,4 @@
-<img src="https://bit.ly/2VnXWr2" alt="Ironhack Logo" width="100"/>
+<img src="https://www.google.com/search?q=mastermind&rlz=1C1VDKB_esES950ES950&source=lnms&tbm=isch&sa=X&ved=2ahUKEwif-IzE69vzAhW1EWMBHY_xDt4Q_AUoAXoECAEQAw&biw=1280&bih=577&dpr=1.5#imgrc=yMP2qIjN4I9XKM"  width="100"/>
 
 # PR01-project-python
 # Build your own game!
