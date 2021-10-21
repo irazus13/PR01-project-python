@@ -30,12 +30,11 @@ class Juego:
             elif siguiente=="Jugar":
                 self.jugador()
             elif siguiente=="Dudas":
-                #Lo pongo a la izquierda para que en la terminal se vea pegado al margen
                 print('''
-Se trata de adivinar un codigo secreto oculto!
-Tienes que adivinar la combinacion de colores correcta. 
-Los colores se pueden repetir, cuando aciertes uno de las posiciones la respuesta de la maquina sera una X,
-si aciertas un color pero no esta en posicion correcta sera un O, si el color no esta se imprime un /.
+                    Se trata de adivinar un codigo secreto oculto!
+                    Tienes que adivinar la combinacion de colores correcta. 
+                    Los colores se pueden repetir, cuando aciertes uno de las posiciones la respuesta de la maquina sera una X,
+                    si aciertas un color pero no esta en posicion correcta sera un O, si el color no esta se imprime un /.
                     ''')
                 self.opciones()
             elif siguiente=="Colores":
@@ -45,7 +44,7 @@ si aciertas un color pero no esta en posicion correcta sera un O, si el color no
                 print("Comando introducido no es correcto, intentalo de nuevo")
                 self.opciones()
             
-    #ejemplo de colores coloerados
+    #ejemplo de colores sin colorear ya que no me reconoce el modulo colorama
     def ejemplo_colores(self):
         print(f"Los colores disponibles son: ")
         print("Azul")
@@ -66,7 +65,7 @@ si aciertas un color pero no esta en posicion correcta sera un O, si el color no
         self.seleccion=random.choices(self.colores,k=4)
         return self.seleccion
 
-   #creamos la funcion de pedir los colores e identificar si estan en el sitio correcto
+ #creamos la funcion de pedir los colores e identificar si estan en el sitio correcto
     def jugador(self):
         seleccion=self.seleccion_bolas()
         #codigo para comprobaciones, se imprimen los colores en orden, lo dejo desseleccionado para jugar
@@ -122,9 +121,9 @@ si aciertas un color pero no esta en posicion correcta sera un O, si el color no
             elif cuarto_numero not in seleccion:
                 d=("/")
                 
-            #variable que junta el resultado y cambia el orden de las respuestas
+            #variable que junta el resultado y cambia el orden de las respuestas e imprime el resultado
             self.resultado=a+b+c+d
-            ''.join(random.sample(self.resultado,len(self.resultado)))
+            print(''.join(random.sample(self.resultado,len(self.resultado))))
             
             self.oportunidades-=1
             print(f'Te quedan {self.oportunidades} oportunidades todavia, recuerda que los colores son {", ".join(self.colores)}')
@@ -138,6 +137,7 @@ si aciertas un color pero no esta en posicion correcta sera un O, si el color no
                 else:
                     print("Hasta la proxima")
                     break
+            
             elif self.oportunidades==0:
                 print(f"{self.resultado}\nHas sido derrotado!La respuesta correcta es: {seleccion}")
                 x=input("Quieres seguir jugando? Si/No").title()
