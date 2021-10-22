@@ -9,9 +9,8 @@ class Juego:
         self.colores=['Rojo', 'Azul', 'Amarillo', 'Marron', 'Verde', 'Celeste', 'Blanco', 'Negro']
         
         #Imprimimos una presentacion y la funcion de inicio del juego
-        print (f"Bienvenido {self.nombre} a MASTERMIND, tendras que elegir cuatro colores y colocarlos en la posicion correcta, tienes 8 oportunidades. Crees que serás capaz? Buena suerte!")
-        
-        
+         print (f"Bienvenido {self.nombre} a MASTERMIND, tendras que elegir cuatro colores y colocarlos en la posicion correcta. Crees que serás capaz? El juego esta diseñado en modo DIFICIL... Te recomendamos antes de empezar leerte bien la seccion 'Dudas' Buena suerte!")
+               
     #menu basico de opciones    
     def opciones(self):
             print('''
@@ -30,11 +29,17 @@ class Juego:
             elif siguiente=="Jugar":
                 self.jugador()
             elif siguiente=="Dudas":
-                print('''
+               print('''
                     Se trata de adivinar un codigo secreto oculto!
                     Tienes que adivinar la combinacion de colores correcta. 
                     Los colores se pueden repetir, cuando aciertes uno de las posiciones la respuesta de la maquina sera una X,
                     si aciertas un color pero no esta en posicion correcta sera un O, si el color no esta se imprime un /.
+                        -Es decir si aciertas los cuatro colores en su posicion la respuesta sera: XXXX
+                        - Si aciertas los colores pero ninguno en su posicion la respuesta sera: OOOO
+                        - Si no aciertas ningun color la respuesta sera: ////
+                        - Si aciertas dos colores en su posicion y dos colores en posicion incorrecta: XX00
+                        - Si aciertas un color en su posicion, un color pero no en su posicion y los otros dos colores no estan: XO//
+                    La respuesta sera devuelta totalmente ALEATORIA, es decir la X, la O o la /, estara desordenadas, NO TIENES QUE TENER EN CUENTA LA POSICION DE LA RESPUESTA
                     ''')
                 self.opciones()
             elif siguiente=="Colores":
