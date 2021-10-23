@@ -9,8 +9,9 @@ class Juego:
         self.colores=['Rojo', 'Azul', 'Amarillo', 'Marron', 'Verde', 'Celeste', 'Blanco', 'Negro']
         
         #Imprimimos una presentacion y la funcion de inicio del juego
-         print (f"Bienvenido {self.nombre} a MASTERMIND, tendras que elegir cuatro colores y colocarlos en la posicion correcta. Crees que serás capaz? El juego esta diseñado en modo DIFICIL... Te recomendamos antes de empezar leerte bien la seccion 'Dudas' Buena suerte!")
-               
+        print (f"Bienvenido {self.nombre} a MASTERMIND, tendras que elegir cuatro colores y colocarlos en la posicion correcta. Crees que serás capaz? Primero elegiras el nivel y luego las oportunidades que quieres para intentar ganar... Te recomendamos antes de empezar leerte bien la seccion 'Dudas' Buena suerte!")
+        
+        
     #menu basico de opciones    
     def opciones(self):
             print('''
@@ -29,9 +30,10 @@ class Juego:
             elif siguiente=="Jugar":
                 self.jugador()
             elif siguiente=="Dudas":
-               print('''
+                print('''
                     Se trata de adivinar un codigo secreto oculto!
-                    Tienes que adivinar la combinacion de colores correcta. 
+                    Tienes que adivinar la combinacion de colores correcta.
+                    Primero elige el nivel entre facil (jugaras con 4 colores), medio (jugaras con 6 colores) o dificil (jugaras con 8 colores)
                     Los colores se pueden repetir, cuando aciertes uno de las posiciones la respuesta de la maquina sera una X,
                     si aciertas un color pero no esta en posicion correcta sera un O, si el color no esta se imprime un /.
                         -Es decir si aciertas los cuatro colores en su posicion la respuesta sera: XXXX
@@ -39,7 +41,8 @@ class Juego:
                         - Si no aciertas ningun color la respuesta sera: ////
                         - Si aciertas dos colores en su posicion y dos colores en posicion incorrecta: XX00
                         - Si aciertas un color en su posicion, un color pero no en su posicion y los otros dos colores no estan: XO//
-                    La respuesta sera devuelta totalmente ALEATORIA, es decir la X, la O o la /, estara desordenadas, NO TIENES QUE TENER EN CUENTA LA POSICION DE LA RESPUESTA
+                    La respuesta sera devuelta totalmente ALEATORIA, es decir la X, la O o la /, estara desordenadas,
+                    NO TIENES QUE TENER EN CUENTA LA POSICION DE LA RESPUESTA
                     ''')
                 self.opciones()
             elif siguiente=="Colores":
@@ -48,6 +51,7 @@ class Juego:
             else:
                 print("Comando introducido no es correcto, intentalo de nuevo")
                 self.opciones()
+            
             
     #ejemplo de colores sin colorear ya que no me reconoce el modulo colorama
     def ejemplo_colores(self):
@@ -67,7 +71,17 @@ class Juego:
     def seleccion_bolas(self):
         #para la seleccion aleatoria de los colores y su posicion
         self.colores=['Rojo', 'Azul', 'Amarillo', 'Marron', 'Verde', 'Celeste', 'Blanco', 'Negro']
-        self.seleccion=random.choices(self.colores,k=4)
+        #seleccion nivel
+        nivel=int(input("Elige nivel entre 1 (facil), 2(medio), 3(dificil)"))
+        if nivel==1:
+            self.seleccion=random.choices(self.colores[0:4],k=4)
+            print(f'Juegas con los colores: {self.colores[0:4]}' )
+        elif nivel==2:
+            self.seleccion=random.choices(self.colores[0:6],k=4)
+            print(f'Juegas con los colores: {self.colores[0:6]}' )
+        elif nivel==3:
+            self.seleccion=random.choices(self.colores[0:8],k=4)
+            print(f'Juegas con los colores: {self.colores[0:8]}' )
         return self.seleccion
 
  #creamos la funcion de pedir los colores e identificar si estan en el sitio correcto
