@@ -1,5 +1,6 @@
 #Primero importamos todas las bibliotecas necesarias
 import random
+
 class Juego:
     
     def __init__(self,nombre=None):

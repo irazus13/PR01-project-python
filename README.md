@@ -7,11 +7,11 @@ Primer proyecto del modulo 1
 
 
 ## Contenido
-- [Descripcion del juego](#Descripcion del juego)
+- [Descripcion del juego](#Descripcion-del-juego)
 - [Reglas](#Reglas)
-- [Forma de jugar](#Forma de jugar)
-- [Organizacion-Trello](#Organizacion Trello)
-- [Mas informacion](#Mas informacion)
+- [Forma de jugar](#Forma-de-jugar)
+- [Organizacion-Trello](#Organizacion-Trello)
+- [Mas informacion](#Mas-informacion)
 
 
 ## Descripcion del juego
@@ -21,8 +21,20 @@ El objetivo es descifrar el código de colores que creó el otro jugador. Para h
 
 
 ## Reglas
-Primero elegiras el nivel que quieres jugar entre facil (4 colores), medio (6 colores) y dificil (8 colores). Despues elegiras cuantas oportunidades quieres jugar para ganar.
+Primero elegiras el nivel que quieres jugar:
+    - Facil (4 colores)
+    - Medio (6 colores)
+    - Dificil (8 colores).
+Despues elegiras cuantas oportunidades quieres jugar para ganar.
 Cada turno elegirás cuatro combinaciones de colores con tres resultados posibles para cada posición. Hay que tener en cuenta que los colores se pueden repetir. El resultado sera: **"X"** si has acertado el color en su posicion. **"O"**  si has acertado el color pero no en su posicion correcta y **"/"** si el color no esta en el codigo.
+Ejemplo de respuesta:
+    -Es decir si aciertas los cuatro colores en su posicion la respuesta sera: XXXX
+    - Si aciertas los colores pero ninguno en su posicion la respuesta sera: OOOO
+    - Si no aciertas ningun color la respuesta sera: ////
+    - Si aciertas dos colores en su posicion y dos colores en posicion incorrecta: XX00
+    - Si aciertas un color en su posicion, otro que no este en posicion y los otros no estan: XO//
+La respuesta sera devuelta totalmente ALEATORIA, es decir la X, la O o la /, estara desordenadas.
+NO TIENES QUE TENER EN CUENTA LA POSICION DE LA RESPUESTA
 
 
 ## Forma de jugar
